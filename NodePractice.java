@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Node{
 	int data;
 	Node next; 
@@ -5,7 +6,8 @@ class Node{
 		this.data=data;
 	}
 }
-class NodePractice{
+public class NodePractice{
+	static Scanner input = new Scanner(System.in);
 	public static void main(String args[]){
 		Node n1 = new Node(100);
 		Node n2 = new Node(200);
@@ -28,19 +30,21 @@ class NodePractice{
 		System.out.println("\b\b]");
 		
 		temp = n1;
-		System.out.print("Index for 400 : ");
+		System.out.print("Index for : ");
+		int user = input.nextInt();
 		int index = 0;
 		while(temp!=null){
-			if(temp.data==400){
-				System.out.print(index);
+			if(temp.data==user){
+				System.out.print("Index for "+user+" : "+index);
 				break;
 			}
 			temp = temp.next;
 			index++;
 			if(temp==null){
 				index=-1;
-				System.out.print(index);
+				System.out.print("There are no "+user+" : "+index);
 			}
 		}
+		
 	}
 }
